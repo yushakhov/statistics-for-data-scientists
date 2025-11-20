@@ -1,23 +1,36 @@
-# statistics-for-data-scientists
-Code associated with the book "Practical Statistics for Data Scientists: 50 Essential Concepts"
+# Practical Statistics for Data Scientists (Python Edition)
 
-The scripts are stored by chapter and replicate most of the figures and code snippets.
+Code associated with the book "Practical Statistics for Data Scientists: 50 Essential Concepts", translated to Python.
 
-HOW TO GET THE DATA:
-Run R script:
-The data is not saved on github and you will need to download the data.
-You can do this in R using the sript src/download_data.r. This will copy the data into the data directory ~/statistics-for-data-scientists/data. 
+The Python scripts are stored by chapter in the `python_src` directory and replicate most of the figures and code snippets from the original R code.
 
-Manual download:
-https://github.com/gedeck/practical-statistics-for-data-scientists
+## HOW TO USE
 
-IMPORTANT NOTE: 
-The scripts all assume that you have cloned the repository into the top level home directory (~/)
-If you save the repository elsewhere, you will need to edit the line
+### Data
+The data is not stored on GitHub. You will need to download it first.
 
-  PSDS_PATH <- file.path('~', 'statistics-for-data-scientists')
+You can do this by running the Python script:
 
-to point to the appropriate directory in all of the scripts.
+```bash
+python python_src/download_data.py
+```
 
-  PSDS_PATH <- <<pathname I am using>>
->>>>>>> 321b878750602e233aad8a0a7814a8f5ceb99cf0
+This will download the necessary data files into a `data` directory inside the project folder.
+
+### Dependencies
+The scripts require several Python libraries. You can install them using `pip`:
+
+```bash
+pip install -r requirements.txt
+```
+
+### Running the scripts
+The scripts assume that the repository has been cloned into your home directory (`~/statistics-for-data-scientists`). If you save the repository elsewhere, you will need to edit the following line in each script:
+
+```python
+PSDS_PATH = os.path.join(os.path.expanduser('~'), 'statistics-for-data-scientists')
+```
+
+to point to the correct directory path.
+
+The original R scripts for this book can be found at the original author's repository: https://github.com/gedeck/practical-statistics-for-data-scientists
